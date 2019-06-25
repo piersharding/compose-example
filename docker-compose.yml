@@ -1,0 +1,13 @@
+#
+version: '2'
+
+services:
+  widget:
+    image: ubuntu:18.04
+    container_name: ${NAME}
+    environment:
+      - WIDGET_DIR=${WIDGET_DIR}/whatever
+    command: >
+      sh -c "while true; do echo `date` \"WIDGET_DIR is: $${WIDGET_DIR}\"; \
+             sleep 5; \
+             done"
